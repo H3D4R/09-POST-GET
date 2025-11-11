@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Form Pendaftaran Mahasiswa Baru</title>
+  </head>
+  <body>
+    <h1>Pendaftaran Online Mahasiswa Baru</h1>
+
+    <form method="post" action="soal3.php">
+      <table>
+        <tr>
+          <td>Nama Lengkap</td>
+          <td>:</td>
+          <td><input type="text" name="nama" required /></td>
+        </tr>
+
+        <tr>
+          <td>Tempat Lahir</td>
+          <td>:</td>
+          <td><input type="text" name="tempat_lahir" required /></td>
+        </tr>
+
+        <tr>
+          <td>Tanggal Lahir</td>
+          <td>:</td>
+          <td>
+            <select id="tgl" name="tgl"></select>
+            <select id="bln" name="bln"></select>
+            <select id="thn" name="thn"></select>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Alamat Rumah</td>
+          <td>:</td>
+          <td>
+            <textarea name="alamat" rows="5" cols="30" required></textarea>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Jenis Kelamin</td>
+          <td>:</td>
+          <td>
+            <input type="radio" name="jkel" value="Pria" required /> Pria
+            <input type="radio" name="jkel" value="Wanita" /> Wanita
+          </td>
+        </tr>
+
+        <tr>
+          <td>Asal Sekolah</td>
+          <td>:</td>
+          <td><input type="text" name="asal_sekolah" required /></td>
+        </tr>
+
+        <tr>
+          <td>Nilai UAN</td>
+          <td>:</td>
+          <td><input type="text" name="nilai_uan" required /></td>
+        </tr>
+
+        <tr>
+          <td colspan="3">
+            <input type="submit" value="Daftar" />
+            <input type="reset" value="Reset" />
+          </td>
+        </tr>
+      </table>
+    </form>
+
+    <script>
+      let tgl = document.getElementById("tgl");
+      for (let i = 1; i <= 31; i++) {
+        tgl.innerHTML += `<option value="${i}">${i}</option>`;
+      }
+
+      let bln = document.getElementById("bln");
+      for (let i = 1; i <= 12; i++) {
+        bln.innerHTML += `<option value="${i}">${i}</option>`;
+      }
+
+      let thn = document.getElementById("thn");
+      for (let i = 1980; i <= 2005; i++) {
+        thn.innerHTML += `<option value="${i}">${i}</option>`;
+      }
+    </script>
+  </body>
+</html>
